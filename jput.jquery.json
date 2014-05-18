@@ -9,21 +9,21 @@
         "render",
         "jsonrender"
     ],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": {
         "name": "Shabeer Ali M",
-        "url": "https://github.com//shabeer-ali-m"
+        "url": "https://github.com/shabeer-ali-m"
     },
     "licenses": [
         {
             "type": "MIT",
-            "url": "http://nicolasbize.com/magicsuggest/licence.html"
+            "url": "https://github.com/shabeer-ali-m/jput/
         }
     ],
-    "bugs": "https://github.com/nicolasbize/magicsuggest/issues",
-    "homepage": "http://nicolasbize.com/magicsuggest/",
-    "docs": "http://nicolasbize.com/magicsuggest/doc.html",
-    "download": "https://github.com/nicolasbize/magicsuggest/releases",
+    "bugs": "https://github.com/shabeer-ali-m/jput/issues",
+    "homepage": "https://github.com/shabeer-ali-m/jput/",
+    "docs": "https://github.com/shabeer-ali-m/jput/",
+    "download": "https://github.com/shabeer-ali-m/jput/",
     "dependencies": {
         "jquery": ">=1.8.3"
     }
