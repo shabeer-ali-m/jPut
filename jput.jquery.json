@@ -9,7 +9,7 @@
         "render",
         "jsonrender"
     ],
-    "version": "1.0.2",
+    "version": "1.0.8",
     "author": {
         "name": "Shabeer Ali M",
         "url": "https://github.com/shabeer-ali-m"
@@ -17,13 +17,13 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/shabeer-ali-m/jput/
+            "url": "https://github.com/shabeer-ali-m/jput"
         }
     ],
     "bugs": "https://github.com/shabeer-ali-m/jput/issues",
-    "homepage": "https://github.com/shabeer-ali-m/jput/",
-    "docs": "https://github.com/shabeer-ali-m/jput/",
-    "download": "https://github.com/shabeer-ali-m/jput/",
+    "homepage": "https://github.com/shabeer-ali-m/jput",
+    "docs": "https://github.com/shabeer-ali-m/jput",
+    "download": "https://github.com/shabeer-ali-m/jput",
     "dependencies": {
         "jquery": ">=1.8.3"
     }
