@@ -1,0 +1,42 @@
+
+
+
+<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">//jPut HTML Template (it will he hidden)</span>
+<span style="color:#03c">&lt;<span style="font-weight:700">div</span> <span style="color:#36c;font-style:italic">jput</span>=<span style="color:#093">"template1"</span>></span>
+    <span style="color:#03c">&lt;<span style="font-weight:700">div</span> <span style="color:#36c;font-style:italic">class</span>=<span style="color:#093">"items"</span> <span style="color:#36c;font-style:italic">id</span>=<span style="color:#093">"item_<span style="background:rgba(250,250,250,0.99);color:#000">{{id}}</span>"</span>></span>
+      <span style="color:#03c">&lt;<span style="font-weight:700">h1</span>></span><span style="background:rgba(250,250,250,0.99);color:#000">{{name}}</span><span style="color:#03c">&lt;/<span style="font-weight:700">h1</span>></span>
+      <span style="color:#06f;font-style:italic">//for image tag to avoid error put 'jsrc' instead of 'src'</span>
+	  <span style="color:#03c">&lt;<span style="font-weight:700">img</span> <span style="color:#36c;font-style:italic">jsrc</span>=<span style="color:#093">"/images/<span style="background:rgba(250,250,250,0.99);color:#000">{{image_loc|<span style="color:#33f;font-weight:700">|default</span>.jpg}}</span>"</span> <span style="color:#36c;font-style:italic">alt</span>=<span style="color:#093">""</span>/></span>
+      <span style="color:#03c">&lt;<span style="font-weight:700">span</span>></span><span style="background:rgba(250,250,250,0.99);color:#000">{{description}}</span><span style="color:#03c">&lt;/<span style="font-weight:700">span</span>></span>
+    <span style="color:#03c">&lt;/<span style="font-weight:700">div</span>></span>
+<span style="color:#03c">&lt;/<span style="font-weight:700">div</span>></span>
+
+<span style="color:#03c">&lt;<span style="font-weight:700">div</span> <span style="color:#36c;font-style:italic">id</span>=<span style="color:#093">"main"</span>></span>
+<span style="color:#03c">&lt;/<span style="font-weight:700">div</span>></span>
+</pre>
+
+
+
+
+<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">//JSON Data    </span>
+<span style="font-weight:700">var</span> projects<span style="color:#00f">=</span>[{<span style="color:#093">"id"</span>:<span style="color:#093">"8"</span>,<span style="color:#093">"name"</span>:<span style="color:#093">"name1"</span>,<span style="color:#093">"description"</span>:<span style="color:#093">"This is a test"</span>,<span style="color:#093">"image_loc"</span>:<span style="color:#093">"image1.jpg"</span>}, {<span style="color:#093">"id"</span>:<span style="color:#093">"9"</span>,<span style="color:#093">"name"</span>:<span style="color:#093">"name2"</span>, <span style="color:#093">"description"</span>:<span style="color:#093">"Test 2"</span>,<span style="color:#093">"image_loc"</span>:<span style="color:#093">"image2.jpg"</span>}];
+<br/><span style="color:#06f;font-style:italic">//The div you want to upload    </span>
+<span style="color:#33f;font-weight:700">$</span>('<span style="color:#36c;font-style:italic">#main</span>').jPut({
+        dataName:<span style="color:#093">''</span>,        <span style="color:#06f;font-style:italic">//object name if the json data is in specified object</span>
+        jsonData:data,      <span style="color:#06f;font-style:italic">//(jsonData/ajax_url) is required	your json data to append/prepend</span>
+        ajax_url:<span style="color:#093">'http://yourdomain.com/data.json',</span>      <span style="color:#06f;font-style:italic">//ajax:Specifies the URL to send the request to. Default is the current page</span>
+        ajax_data:'',      <span style="color:#06f;font-style:italic">//ajax:specifies data to be sent to the server</span>
+        ajax_type:'',      <span style="color:#06f;font-style:italic">//ajax:specifies the type of request. (GET or POST)</span>
+	name:<span style="color:#093">'template1'</span>,   <span style="color:#06f;font-style:italic">//*required field	jput template name</span>
+        limit:<span style="color:#06f">0</span>,            <span style="color:#06f;font-style:italic">//default:0         limit the number of record to show</span>
+        prepend:<span style="color:#9700cc">false</span>,      <span style="color:#06f;font-style:italic">//default:false     If you want to prepend data make it true. By default data will append </span>
+        <span style="color:#ff8000">done</span>:<span style="font-weight:700">function</span>(e){   
+                            <span style="color:#06f;font-style:italic">//on success (e will be the json data)</span>
+            },
+        <span style="color:#ff8000">error</span>:<span style="font-weight:700">function</span>(msg){
+            <span style="color:#33f;font-weight:700">alert</span>(<span style="color:#093">'Error Message:'</span><span style="color:#00f">+</span>msg);    <span style="color:#06f;font-style:italic">//On error</span>
+        }
+});
+</pre>
