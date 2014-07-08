@@ -11,13 +11,11 @@ Step 2: Call the jPut function with your json data or call the json url
 jPut<br/>
 <b>Installation</b>
 
-<pre>
 <script src="code.jquery.com/jquery-1.11.0.min.js">
 </pre>
 <!-- Adding jput file (Dont worry about the size its less than 2kb)-->
-<pre>
 <script src="js/jput.min.js">
-</pre>
+
 
 
 <b>jPut HTML Template</b>
