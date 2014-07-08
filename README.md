@@ -32,7 +32,11 @@ src="js/jput.min.js"
 
 <div id="main">
 </div>
+</pre>
 
+<b>JPut Code</b>
+
+<pre>
 //JSON Data    
 var projects=[{"id":"8","name":"name1","description":"This is a test","image_loc":"image1.jpg"}, {"id":"9","name":"name2", "description":"Test 2","image_loc":"image2.jpg"}];
 
