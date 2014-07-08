@@ -12,9 +12,10 @@ jPut<br/>
 <b>Installation</b>
 
 <pre>
-<!-- Adding jquery file-->
 <script src="code.jquery.com/jquery-1.11.0.min.js">
+</pre>
 <!-- Adding jput file (Dont worry about the size its less than 2kb)-->
+<pre>
 <script src="js/jput.min.js">
 </pre>
 
