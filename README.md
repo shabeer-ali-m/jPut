@@ -1,27 +1,31 @@
-Description
 
-jPut
-Put you JSON to HTML easily.
+<h1>jPut</h1>
+<h2>Put you JSON to HTML easily.</h2>
 
-Description
+<b>Description</b><br/>
 jPut is a small jquey plugin which you can append your JSON to customized HTML format.
 
 Step 1: Create a jPut HTML Template
 Step 2: Call the jPut function with your json data or call the json url
 
-jPut
-Installation
+jPut<br/>
+<b>Installation</b>
+
+<pre>
 <!-- Adding jquery file-->
 <script src="code.jquery.com/jquery-1.11.0.min.js">
 <!-- Adding jput file (Dont worry about the size its less than 2kb)-->
 <script src="js/jput.min.js">
+</pre>
 
 
-jPut HTML Template
+<b>jPut HTML Template</b>
+<pre>
+
 //jPut HTML Template (it will he hidden)
 <div jput="template1">
     <div class="items" id="item_{{id}}">
-      <h1>{{name}}</h1>
+      <span>{{name}}</span>
       //for image tag to avoid error put 'jsrc' instead of 'src'
 	  <img jsrc="/images/{{image_loc||default.jpg}}" alt=""/>
       <span>{{description}}</span>
@@ -31,7 +35,6 @@ jPut HTML Template
 <div id="main">
 </div>
 
-<pre>
 //JSON Data    
 var projects=[{"id":"8","name":"name1","description":"This is a test","image_loc":"image1.jpg"}, {"id":"9","name":"name2", "description":"Test 2","image_loc":"image2.jpg"}];
 
