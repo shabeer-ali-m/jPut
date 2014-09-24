@@ -58,3 +58,34 @@ $('#main').jPut({
         }
 });
 </pre>
+
+<b>JPut with Multidimensional json</b>
+
+<pre>
+{
+    "name": "Shabeer Ali M",
+    "tags": [
+        "json",
+        "jput",
+        "append"
+    ],
+    "comments": [
+        {
+            "name": "user1",
+            "comment": "its awsome !"
+        },
+        {
+            "name": "user2",
+            "comment": "its easy !"
+        }
+    ]
+}
+</pre>
+If you want to display name & comment of the 1st user the jPut template should be like this.
+
+<pre>
+    The first comment was made by {{comments.0.name}}. Comment : {{comments.0.comment}}
+    {{tags}} will gave all the tags.
+    1st tag : {{tags.0}}
+</pre>
+
