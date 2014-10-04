@@ -1,10 +1,11 @@
 {
     "name": "jput",
     "title": "jPut JSON to HTML",
-    "description": "jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax.jPut supports multidimensional json too.",
+    "description": "jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax.jPut supports multidimensional json too. jPut also supports JSONP.",
     "keywords": [
         "jput",
         "json",
+        "jsonp",
         "ui",
 		"ajax",
         "render",
@@ -28,6 +29,6 @@
     "docs": "https://github.com/shabeer-ali-m/jput",
     "download": "https://github.com/shabeer-ali-m/jput",
     "dependencies": {
-        "jquery": ">=1.8.3"
+        "jquery": ">=1.7.0"
     }
 }

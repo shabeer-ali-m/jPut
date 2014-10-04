@@ -34,7 +34,7 @@ src="js/jput.min.js"
 </div>
 </pre>
 
-<b>JPut Code</b>
+<b>jPut Code</b>
 
 <pre>
 //JSON Data    
@@ -45,11 +45,13 @@ $('#main').jPut({
         dataName:'',        //object name if the json data is in specified object
         jsonData:projects,      //(jsonData/ajax_url) is required	your json data to append/prepend
         ajax_url:'http://yourdomain.com/data.json',      //ajax:Specifies the URL to send the request to. Default is the current page
-        ajax_data:'',      //ajax:specifies data to be sent to the server
-        ajax_type:'',      //ajax:specifies the type of request. (GET or POST)
-		name:'template1',   //*required field	jput template name
+	name:'template1',   //*required field	jput template name
         limit:0,            //default:0         limit the number of record to show
         prepend:false,      //default:false     If you want to prepend data make it true. By default data will append 
+        ajax_data:'',      //ajax:specifies data to be sent to the server
+        ajax_type:'',      //ajax:specifies the type of request. (GET or POST)
+        ajax_dataType:'json',   //ajax:you can use 'json' or 'jsonp'. By deafult it will be json
+        ajax_jsonpCallback:'',  //ajax:jsonp callback
         done:function(e){   
                             //on success (e will be the json data)
             },
@@ -59,7 +61,7 @@ $('#main').jPut({
 });
 </pre>
 
-<b>JPut with Multidimensional json</b>
+<b>jPut with Multidimensional json</b>
 
 <pre>
 {
@@ -88,4 +90,18 @@ If you want to display name & comment of the 1st user the jPut template should b
     {{tags}} will gave all the tags.
     1st tag : {{tags.0}}
 </pre>
+
+<b>jPut with jsonp</b>
+
+<pre>
+        //loading jsonp data using ajax
+        $('#yahooEntry').jPut({
+            ajax_url:'//pipes.yahoo.com/pipes/pipe.run?_id=e4e173cf75b0aa1b374b7987398d6091&_render=json&_callback=getYahooFeed',
+            ajax_jsonpCallback:'getYahooFeed',  //jsonp call back
+            ajax_dataType:'jsonp',              //jsop or json
+            dataName:'value.items',         
+            name:'list'                         //jPut name
+        });
+</pre>
+
 
