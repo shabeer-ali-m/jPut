@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>jPut by shabeer-ali-m</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>jPut</h1>
+        <h2>jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax.</h2>
+        <a href="https://github.com/shabeer-ali-m/jPut" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="jput" class="anchor" href="#jput" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut</h1>
+
+<h2>
+<a id="put-you-json-to-html-easily" class="anchor" href="#put-you-json-to-html-easily" aria-hidden="true"><span class="octicon octicon-link"></span></a>Put you JSON to HTML easily.</h2>
+
+<p><b>Description</b><br>
+jPut is a small jquey plugin which you can append your JSON to customized HTML format.</p>
+
+<p>Step 1: Create a jPut HTML Template
+Step 2: Call the jPut function with your json data or call the json url</p>
+
+<p>jPut<br>
+<b>Installation</b></p>
+
+<pre>
+src="code.jquery.com/jquery-1.11.0.min.js"
+
+src="js/jput.min.js"
+</pre>
+
+<p><b>jPut HTML Template</b></p>
+
+<pre>
+
+//jPut HTML Template (it will he hidden)
+<div>
+    <div id="item_{{id}}">
+      {{name}}
+      //for image tag to avoid error put 'jsrc' instead of 'src'
+      <img alt="">
+      {{description}}
+    </div>
+</div>
+
+<div id="main">
+</div>
+</pre>
+
+<p><b>jPut Code</b></p>
+
+<pre>
+//JSON Data    
+var projects=[{"id":"8","name":"name1","description":"This is a test","image_loc":"image1.jpg"}, {"id":"9","name":"name2", "description":"Test 2","image_loc":"image2.jpg"}];
+
+//The div you want to upload    
+$('#main').jPut({
+        dataName:'',        //object name if the json data is in specified object
+        jsonData:projects,      //(jsonData/ajax_url) is required   your json data to append/prepend
+        ajax_url:'http://yourdomain.com/data.json',      //ajax:Specifies the URL to send the request to. Default is the current page
+    name:'template1',   //*required field   jput template name
+        limit:0,            //default:0         limit the number of record to show
+        prepend:false,      //default:false     If you want to prepend data make it true. By default data will append 
+        ajax_data:'',      //ajax:specifies data to be sent to the server
+        ajax_type:'',      //ajax:specifies the type of request. (GET or POST)
+        ajax_dataType:'json',   //ajax:you can use 'json' or 'jsonp'. By deafult it will be json
+        ajax_jsonpCallback:'',  //ajax:jsonp callback
+        done:function(e){   
+                            //on success (e will be the json data)
+            },
+        error:function(msg){
+            alert('Error Message:'+msg);    //On error
+        }
+});
+</pre>
+
+<p><b>jPut with Multidimensional json</b></p>
+
+<pre>
+{
+    "name": "Shabeer Ali M",
+    "tags": [
+        "json",
+        "jput",
+        "append"
+    ],
+    "comments": [
+        {
+            "name": "user1",
+            "comment": "its awsome !"
+        },
+        {
+            "name": "user2",
+            "comment": "its easy !"
+        }
+    ]
+}
+</pre>
+
+<p>If you want to display name &amp; comment of the 1st user the jPut template should be like this.</p>
+
+<pre>
+    The first comment was made by {{comments.0.name}}. Comment : {{comments.0.comment}}
+    {{tags}} will gave all the tags.
+    1st tag : {{tags.0}}
+</pre>
+
+<p><b>jPut with jsonp</b></p>
+
+<pre>
+        //loading jsonp data using ajax
+        $('#yahooEntry').jPut({
+            ajax_url:'//pipes.yahoo.com/pipes/pipe.run?_id=e4e173cf75b0aa1b374b7987398d6091&amp;_render=json&amp;_callback=getYahooFeed',
+            ajax_jsonpCallback:'getYahooFeed',  //jsonp call back
+            ajax_dataType:'jsonp',              //jsop or json
+            dataName:'value.items',         
+            name:'list'                         //jPut name
+        });
+</pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/shabeer-ali-m/jPut/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/shabeer-ali-m/jPut/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/shabeer-ali-m/jPut"></a> is maintained by <a href="https://github.com/shabeer-ali-m">shabeer-ali-m</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
