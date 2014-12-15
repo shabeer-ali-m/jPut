@@ -11,6 +11,9 @@ jPut is a small jquey plugin which you can put your JSON as customized HTML form
 ### Version
 1.1.6
 
+### Dependencies
+[jQuery]
+
 ### Installation
 
 You need to add jquery.js & jput.min.js :
@@ -84,3 +87,4 @@ error:function(msg){
 ```
 
 [Demo Page]:http://shabeer-ali-m.github.io/jPut/
+[jQuery]:http://jquery.com/
