@@ -5,6 +5,9 @@ jPut is a small jquey plugin which you can put your JSON as customized HTML form
  - Create jPut Template
  - Call jPut function
 
+### Demo
+[Demo Page] 
+ 
 ### Version
 1.1.6
 
@@ -79,3 +82,5 @@ error:function(msg){
     name:'list'                         //jPut name
 });
 ```
+
+[Demo Page]:http://shabeer-ali-m.github.io/jPut/
