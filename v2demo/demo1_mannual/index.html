@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Mulitiple Data</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+	  <script>
+	  var ul;
+	  $(document).ready(function(){
+		json=[{"name":"Google","link":"http://google.com"},{"name":"Ask","link":"http://ask.com"}];
+		ul=$('#ul_id').jPut({
+			jsonData:json,
+			name:'links'
+		});
+	  });
+	  </script>
+   </head>
+   <body>
+	  <a href="#" onclick='ul.append({"name":"yahoo","link":"http://yahoo.com"})'>Add</a>	
+      <ul id="ul_id" jPut="links">
+         <li><a href="{{json.link}}">{{json.name}}</a></li>
+      </ul>
+      <br/>
+      <br/>
+   </body>
+</html>

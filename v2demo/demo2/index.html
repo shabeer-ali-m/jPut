@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Mulitiple Data</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+   </head>
+   <body>
+      <div jput="users" jput-jsondata='{"name":"Name","email":"user@gmail.com","phone":"+51 23126"}' jput-singledata="true">
+         <h1>Name : {{json.name}}</h1>
+         <h2>Email :  {{json.email}}</h2>
+         <h3>Mobile : {{json.phone}}</h3>
+      </div>
+      <br/>
+      <br/>
+      Name :<input type="text" value="Name" onkeyup="jPut.users.update('name',this.value)" />
+      Email :<input type="text" value="user@gmail.com" onkeyup="jPut.users.update('email',this.value)" />
+      Mobile :<input type="text" value="+51 23126" onkeyup="jPut.users.update('phone',this.value)" />
+      <a href="#" onclick="alert(JSON.stringify(jPut.users.data))">Save</a>
+   </body>
+</html>

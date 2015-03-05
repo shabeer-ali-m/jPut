@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Load More</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+      <script>
+         $(document).ready(function(){
+         	var page=1;
+          	$('#append').click(function(){
+          		jPut.country.call_ajax({
+          			ajax_url:page+'.json',
+          			prepend:true,
+          			done:function(){
+          				page++;
+          				if(page==4)
+          					$('#append').remove();
+          			}
+          		});
+          	});
+         });
+      </script>
+   </head>
+   <body>
+      <a id="append" href="#">Prepend</a>
+      <hr/>
+      <div jput="country" jput-jsondata="[]">
+         <span><img jsrc="flags/{{json.img}}.png"/>  {{json.name}}</span></br>
+      </div>
+   </body>
+</html>

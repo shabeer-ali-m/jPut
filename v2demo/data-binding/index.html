@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Mulitiple Data</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+      <script>
+      function edit(index)
+      {
+         $('#save,#update').toggle();
+         $('#name').val(jPut.users.data[index].name);
+         $('#email').val(jPut.users.data[index].email);
+         $('#phone').val(jPut.users.data[index].phone);
+         $('#update').attr('data-id',index);
+
+      }
+      $(document).ready(function(){
+
+         //on new user
+         $('#save').click(function(){
+            //defining new user
+            var user=Object();
+            user['name']=$('#name').val();
+            user['email']=$('#email').val();
+            user['phone']=$('#phone').val();
+            //appening to jput variable
+            jPut.users.append(user);
+         });
+
+         //on update user
+         $('#update').click(function(){
+            //defining new user
+            var user=Object();
+            user['name']=$('#name').val();
+            user['email']=$('#email').val();
+            user['phone']=$('#phone').val();
+
+            //appening to jput variable
+            /*
+               update(index,newdata)
+            */
+            jPut.users.update($('#update').attr('data-id'),user);
+
+            $('#save,#update').toggle();
+         });
+
+         jPut.users.data=[{"name":"Shabeer","email":"user@gmail.com","phone":"+51 23126"},{"name":"Shibu","email":"user@gmail.com","phone":"+51 23126"},{"name":"Shabeer","email":"user@gmail.com","phone":"+51 23126"}];
+      });
+      </script>
+   </head>
+   <body>
+      <br/>
+      Name :<input id="name" type="text" value="Name" />
+      Email :<input id="email" type="text" value="user@gmail.com"  />
+      Mobile :<input id="phone" type="text" value="+51 23126"  />
+      <a href="#" id="save">Save</a>
+      <a href="#" id="update" data-id="0" style="display:none;">Update</a>
+
+      <br/>
+      <br/>
+      <table border="1">
+         <thead>
+            <tr>
+               <td>Index </td>
+               <td>Name </td>
+               <td>Email</td>
+               <td>Phone</td>
+               <td>Edit</td>
+               <td>Delete</td>
+            </tr> 
+         </thead>
+         <tbody jput="users" jput-jsondata='[]'>
+            <tr>
+               <td>{{index}}</td>
+               <td>{{json.name}}</td>
+               <td>{{json.email}}</td>
+               <td>{{json.phone}}</td>
+               <td><a href="#" onclick="edit({{index}})">Edit</a></td>
+               <td><a href="#" onclick="jPut.users.remove({{index}})">Delete</a></td>
+            </tr>
+      </tbody>
+      </table>
+   </body>
+</html>

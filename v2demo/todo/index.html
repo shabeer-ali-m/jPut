@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Mulitiple Data</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+      <script>
+      //function to update count
+      function update_count()
+      {
+      	$('#count_total').html(jPut.todo.data.length);
+      	//finding no of completed task
+      	completed=0;
+      	for(i=0;i<jPut.todo.data.length;i++)
+      		if(jPut.todo.data[i].completed==true)
+      			completed++;
+
+      	$('#count_completed').html(completed);
+
+      }
+      $(document).ready(function(){
+      	//on add
+		$('#addbtn').click(function(e){
+			//appending new task to jPut.todo
+			jPut.todo.append({'task':$('#newone').val(),'completed':false});
+			$('#newone').val('');
+			update_count();
+		});
+
+		//on select change
+		$('body').on('change','.check',function(e){
+			index=$(this).attr('data-id');
+			if($(this).is(':checked')){
+				jPut.todo.data[index].completed=true;
+				$(this).next('span').css('text-decoration','line-through');
+			}	
+			else{
+				$(this).next('span').css('text-decoration','none');
+				jPut.todo.data[index].completed=false;
+			}	
+			update_count();
+		});
+
+		//clear all todo list
+		$('#clearall').click(function(e){
+			//Clear using jPut function clear()
+			jPut.todo.clear();
+		});
+		update_count();
+      });
+      </script>
+   </head>
+   <body>
+      <h1>Todo</h1>
+		 <span jput="todocount"></span>
+	    <span id="count_completed"></span> of <span id="count_total"></span> remaining  [ <a href="#" id="clearall">Clear</a> ]</span>
+	    <!-- jPut template -->
+	  <div jput="todo" jput-jsondata='[{"task":"First Task","completed":false}]' style="margin-bottom: 11px;">
+		<br>
+		<input type="checkbox" class="check" data-id="{{index}}"/>
+		<span style="text-decoration:{{json.completed==false?"none":"line-through"}}">{{json.task}}</span>	
+		<br>
+	  </div>
+	  <input type="text" id="newone"/>
+	  <input type="button" value="ADD" id="addbtn"/>
+   </body>
+</html>

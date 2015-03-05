@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Mulitiple Data</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+   </head>
+   <body>
+      <ul jput="links" jput-jsondata='[{"name":"Google","link":"http://google.com"},{"name":"Ask","link":"http://ask.com"}]'>
+         <li><a href="{{json.link}}">{{json.name}}</a></li>
+      </ul>
+      <br/>
+      <br/>
+   </body>
+</html>
