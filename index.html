@@ -3,142 +3,170 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <title>jPut by shabeer-ali-m</title>
   </head>
 
   <body>
-    <header>
+    <div id="container">
       <div class="inner">
-        <h1>jPut</h1>
-        <h2>jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax.</h2>
-        <a href="https://github.com/shabeer-ali-m/jPut" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+        <header>
+          <h1>jPut</h1>
+          <h2>jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/shabeer-ali-m/jPut/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/shabeer-ali-m/jPut/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/shabeer-ali-m/jPut" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
           <h1>
-<a id="jput" class="anchor" href="#jput" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut</h1>
+<a id="jput---json-to-html" class="anchor" href="#jput---json-to-html" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut - JSON to HTML</h1>
 
-<p>jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax and multi level json. Put your JSON to HTML easily by just two steps.</p>
-
-<ul>
-<li>Create jPut Template</li>
-<li>Call jPut function</li>
-</ul>
+<p>jPut is a small jQuey plugin where you can append your JSON to customized HTML format easily. You can also dynamically bind values to your existing data easily. Its simple and fast. The jPut can call by usind data attributes.</p>
 
 <h3>
-<a id="version" class="anchor" href="#version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h3>
+
 <ul>
-<li><a href="demo/demo1/">Simple jPut Append</a></li>
-<li><a href="demo/jsonp/">jPut with JSONP</a></li>
-<li><a href="demo/loadmore_with_php/">Load more with jPut (php)</a></li>
-<li><a href="demo/multidimensional_json/">Multidimensional JSON</a></li>
-<li><a href="demo/multi_jput/">Looping inside looping</a></li>
+<li>You can load JSON via AJAX </li>
+<li>It can supoprt multi dimensional JSON</li>
+<li>It support JSONP format</li>
 </ul>
 
 <h3>
 <a id="version" class="anchor" href="#version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version</h3>
 
-<p>1.1.6</p>
+<p>2.0.1</p>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p><a href="http://jquery.com">jQuery</a></p>
 
 <h3>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
-<p>You need to add jquery.js &amp; jput.min.js :</p>
+<p>You need to add jquery.js &amp; jput2.js :</p>
 
-<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>script src=<span class="pl-s1"><span class="pl-pds">"</span>code.jquery.com/jquery-1.11.0.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/script<span class="pl-k">&gt;</span>
+<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>script src=<span class="pl-s1"><span class="pl-pds">"</span>//code.jquery.com/jquery-1.11.0.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/script<span class="pl-k">&gt;</span>
 <span class="pl-k">&lt;</span>script src=<span class="pl-s1"><span class="pl-pds">"</span>js/jput.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span>/script<span class="pl-k">&gt;</span></pre></div>
 
 <h3>
-<a id="jput-html-template" class="anchor" href="#jput-html-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut HTML Template</h3>
+<a id="simple-example" class="anchor" href="#simple-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Example</h3>
 
-<p>To use jPut you need a jPut template. </p>
+<p>In this simple example you have list of users as JSON. So you want to render all this as html. In this example you are using data attributes to call jPut.</p>
 
-<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>div jput=<span class="pl-s1"><span class="pl-pds">"</span>templateName<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
-    <span class="pl-k">&lt;</span>div class=<span class="pl-s1"><span class="pl-pds">"</span>items<span class="pl-pds">"</span></span> id=<span class="pl-s1"><span class="pl-pds">"</span>item_{{id}}<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
-      <span class="pl-k">&lt;</span>span<span class="pl-k">&gt;</span>{{name}}<span class="pl-k">&lt;</span>/span<span class="pl-k">&gt;</span>
-      //<span class="pl-k">for</span> <span class="pl-vo">image</span> tag to avoid error put <span class="pl-s1"><span class="pl-pds">'</span>jsrc<span class="pl-pds">'</span></span> instead of <span class="pl-s1"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span>
-      <span class="pl-k">&lt;</span>img jsrc=<span class="pl-s1"><span class="pl-pds">"</span>/images/{{image_loc||default.jpg}}<span class="pl-pds">"</span></span> alt=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>/<span class="pl-k">&gt;</span>
-      <span class="pl-k">&lt;</span>span<span class="pl-k">&gt;</span>{{description}}<span class="pl-k">&lt;</span>/span<span class="pl-k">&gt;</span>
-    <span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span>
-<span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span></pre></div>
+<h5>
+<a id="code" class="anchor" href="#code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code</h5>
 
-<p>Template Featurs:
-You can gave custom conditions in templates.
-On Null:</p>
+<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>ul jput=<span class="pl-s1"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span> jput-jsondata=<span class="pl-s1"><span class="pl-pds">'</span>[{"name":"User 1"},{"name":"User 2"},{"name":"User 3"}]<span class="pl-pds">'</span></span><span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>{{json.name}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>/ul<span class="pl-k">&gt;</span> </pre></div>
 
-<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>div id=<span class="pl-s1"><span class="pl-pds">"</span>test<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>{{name<span class="pl-k">||</span>There is no elemant or name is null}}<span class="pl-k">&lt;</span>/div<span class="pl-k">&gt;</span></pre></div>
+<p>In this example <code>jput="users"</code> attribute sets the entire div as jPut template for methord users. By putting this attribute the jPut will create a Object inside the variable jPut.<code>jPut.users</code>.</p>
+
+<p><code>jput-jsondata=''</code> is the attribute used to set your default data.If your default data is empty jPut wont render anything.</p>
 
 <h3>
-<a id="jput-code" class="anchor" href="#jput-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut Code</h3>
+<a id="databinding" class="anchor" href="#databinding" aria-hidden="true"><span class="octicon octicon-link"></span></a>Databinding</h3>
 
-<p>jPut Javasctipt Code</p>
+<p>For data binding we use <code>{{ json.name }}</code> expression. Since jPut is storing all values in JSON you have to user <code>json.YOUR_VARIABLE_NAME</code></p>
 
-<div class="highlight highlight-sh"><pre>//JSON Data    
-var projects=[{<span class="pl-s1"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>8<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>name1<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>This is a test<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>image_loc<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>image1.jpg<span class="pl-pds">"</span></span>}, {<span class="pl-s1"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>9<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>name2<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>Test 2<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>image_loc<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>image2.jpg<span class="pl-pds">"</span></span>}]<span class="pl-k">;</span>
+<h3>
+<a id="simple-example-2-setting-data-in-javascript" class="anchor" href="#simple-example-2-setting-data-in-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Example 2 (Setting Data in JavaScript)</h3>
 
-//The div you want to upload    
+<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+//on document ready
+<span class="pl-s1"><span class="pl-pds">$(</span><span class="pl-en">document).ready(function</span>(){</span>
+<span class="pl-s1">    //your variable with your users information</span>
+<span class="pl-s1">    var users=[{<span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>User 1<span class="pl-pds">"</span></span>},{<span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>User 2<span class="pl-pds">"</span></span>},{<span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>User 3<span class="pl-pds">"</span></span>}]<span class="pl-k">;</span></span>
+<span class="pl-s1">    /<span class="pl-k">*</span></span>
+<span class="pl-s1">    <span class="pl-k">*</span> Binding your json to jPut</span>
+<span class="pl-s1">    <span class="pl-k">*</span> jPut.<span class="pl-k">&lt;</span>yourTemplateName<span class="pl-k">&gt;</span>.data</span>
+<span class="pl-s1">    <span class="pl-k">*</span>/</span>
+<span class="pl-s1">    jPut.users.data=users<span class="pl-k">;</span></span>
+<span class="pl-s1">}<span class="pl-pds">)</span></span><span class="pl-k">;</span>
+<span class="pl-k">&lt;</span>/script<span class="pl-k">&gt;</span>
+
+<span class="pl-k">&lt;</span>ul jput=<span class="pl-s1"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>{{json.name}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>/ul<span class="pl-k">&gt;</span> </pre></div>
+
+<h3>
+<a id="template-properties" class="anchor" href="#template-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template Properties</h3>
+
+<p>In jPut template you can give any kind of expressions and also you can call your own custom JavaScript functions.</p>
+
+<p>ex :</p>
+
+<div class="highlight highlight-sh"><pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+<span class="pl-st">function</span> <span class="pl-en">grade(mark)</span>
+{
+    <span class="pl-k">if</span>(mark<span class="pl-k">&gt;</span>200)
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>A<span class="pl-pds">"</span></span><span class="pl-k">;</span>
+    <span class="pl-k">else</span> <span class="pl-k">if</span>(mark<span class="pl-k">&gt;</span>150)
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>B<span class="pl-pds">"</span></span><span class="pl-k">;</span>
+    <span class="pl-k">else</span>
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>C<span class="pl-pds">"</span></span><span class="pl-k">;</span>     
+}
+<span class="pl-k">&lt;</span>/script<span class="pl-k">&gt;</span>
+
+<span class="pl-k">&lt;</span>ul jput=<span class="pl-s1"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span> jput-jsondata=<span class="pl-s1"><span class="pl-pds">'</span>[{"name":"User 1","total":180},{"name":"User 2","total":260}]<span class="pl-pds">'</span></span><span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>Name <span class="pl-s3">:</span> {{json.name}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>Total {{json.total}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>Percentage {{json.total/300}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>Grade {{grade(json.total)}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>li<span class="pl-k">&gt;</span>Grade {{json.total<span class="pl-k">&gt;</span>199<span class="pl-k">?</span><span class="pl-s1"><span class="pl-pds">"</span>PASS<span class="pl-pds">"</span></span>:<span class="pl-s1"><span class="pl-pds">"</span>FAIL<span class="pl-pds">"</span></span>}}<span class="pl-k">&lt;</span>/li<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>/ul<span class="pl-k">&gt;</span> </pre></div>
+
+<h3>
+<a id="jput-options" class="anchor" href="#jput-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut Options</h3>
+
+<div class="highlight highlight-sh"><pre>//The div you want to upload    
 <span class="pl-s1"><span class="pl-pds">$(</span><span class="pl-s1"><span class="pl-pds">'</span>#main<span class="pl-pds">'</span></span><span class="pl-pds">)</span></span>.jPut({
-dataName:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,        //object name <span class="pl-k">if</span> the json data is <span class="pl-k">in</span> specified object
-jsonData:projects,      //(jsonData/ajax_url) is required   your json data to append/prepend
-ajax_url:<span class="pl-s1"><span class="pl-pds">'</span>http://yourdomain.com/data.json<span class="pl-pds">'</span></span>,      //ajax:Specifies the URL to send the request to. Default is the current page
-name:<span class="pl-s1"><span class="pl-pds">'</span>template1<span class="pl-pds">'</span></span>,   //<span class="pl-k">*</span>required field   jput template name
-limit:0,            //default:0         limit the number of record to show
-prepend:<span class="pl-s3">false</span>,      //default:<span class="pl-s3">false</span>     If you want to prepend data make it <span class="pl-s3">true</span>. By default data will append 
-ajax_data:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,      //ajax:specifies data to be sent to the server
-ajax_type:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,      //ajax:specifies the <span class="pl-s3">type</span> of request. (GET or POST)
-ajax_dataType:<span class="pl-s1"><span class="pl-pds">'</span>json<span class="pl-pds">'</span></span>,   //ajax:you can use <span class="pl-s1"><span class="pl-pds">'</span>json<span class="pl-pds">'</span></span> or <span class="pl-s1"><span class="pl-pds">'</span>jsonp<span class="pl-pds">'</span></span>. By deafult it will be json
-ajax_jsonpCallback:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,  //ajax:jsonp callback
-<span class="pl-k">done</span>:function(e){   
-    //on success (e will be the json data)
-    },
-error:function(msg){
-        alert(<span class="pl-s1"><span class="pl-pds">'</span>Error Message:<span class="pl-pds">'</span></span>+msg)<span class="pl-k">;</span>    //On error
-    }
+        dataName:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,    //object name <span class="pl-k">if</span> the json data is <span class="pl-k">in</span> specified object
+        jsonData:projects, //(jsonData/ajax_url) is required    your json data to append/prepend
+        ajax_url:<span class="pl-s1"><span class="pl-pds">'</span>http://yourdomain.com/data.json<span class="pl-pds">'</span></span>,//ajax:Specifies the URL to send the request to. Default is the current page
+        ajax_data:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, //ajax:specifies data to be sent to the server
+        ajax_type:<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, //ajax:specifies the <span class="pl-s3">type</span> of request. (GET or POST)
+        name:<span class="pl-s1"><span class="pl-pds">'</span>template1<span class="pl-pds">'</span></span>, //<span class="pl-k">*</span>required field jput template name
+        limit:0, //default:0         limit the number of record to show
+        prepend:<span class="pl-s3">false</span>, //default:<span class="pl-s3">false</span>     If you want to prepend data make it <span class="pl-s3">true</span>. By default data will append 
+        <span class="pl-k">done</span>:function(e){   
+                            //on success (e will be the json data)
+            },
+        error:function(msg){
+            alert(<span class="pl-s1"><span class="pl-pds">'</span>Error Message:<span class="pl-pds">'</span></span>+msg)<span class="pl-k">;</span>    //On error
+        }
 })<span class="pl-k">;</span></pre></div>
 
-<h3>
-<a id="jput-with-jsonp" class="anchor" href="#jput-with-jsonp" aria-hidden="true"><span class="octicon octicon-link"></span></a>jPut with jsonp</h3>
+<p>To learn more go throught the examples.</p>
 
-<div class="highlight highlight-sh"><pre> //loading jsonp data using ajax
-    <span class="pl-s1"><span class="pl-pds">$(</span><span class="pl-s1"><span class="pl-pds">'</span>#yahooEntry<span class="pl-pds">'</span></span><span class="pl-pds">)</span></span>.jPut({
-    ajax_url:<span class="pl-s1"><span class="pl-pds">'</span>//pipes.yahoo.com/pipes/pipe.run?_id=e4e173cf75b0aa1b374b7987398d6091&amp;_render=json&amp;_callback=getYahooFeed<span class="pl-pds">'</span></span>,
-    ajax_jsonpCallback:<span class="pl-s1"><span class="pl-pds">'</span>getYahooFeed<span class="pl-pds">'</span></span>,  //jsonp call back
-    ajax_dataType:<span class="pl-s1"><span class="pl-pds">'</span>jsonp<span class="pl-pds">'</span></span>,              //jsop or json
-    dataName:<span class="pl-s1"><span class="pl-pds">'</span>value.items<span class="pl-pds">'</span></span>,         
-    name:<span class="pl-s1"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>                         //jPut name
-})<span class="pl-k">;</span></pre></div>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
         </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/shabeer-ali-m/jPut/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/shabeer-ali-m/jPut/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+        <footer>
+          jPut is maintained by <a href="https://github.com/shabeer-ali-m">shabeer-ali-m</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-          <p class="repo-owner"><a href="https://github.com/shabeer-ali-m/jPut"></a> is maintained by <a href="https://github.com/shabeer-ali-m">shabeer-ali-m</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+        
       </div>
     </div>
-
-  
   </body>
 </html>
