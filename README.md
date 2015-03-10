@@ -12,6 +12,20 @@ jPut is a small jQuey plugin where you can append your JSON to customized HTML f
 ### Dependencies
 [jQuery]
 
+### Demo
+[Simple jPut Demo]
+
+[One Dimensional Demo]
+
+[Multi Dimensional Demo]
+
+[Data Binding Demo]
+
+[Load More with jPut]
+
+[Todo App]
+
+
 ### Installation
 You need to add jquery.js & jput2.js :
 ```sh
@@ -118,4 +132,11 @@ MIT
 
 
 [jQuery]:http://jquery.com
+[Simple jPut Demo]:http://shabeer-ali-m.github.io/jPut/v2demo/demo1/
+[One Dimensional Demo]:http://shabeer-ali-m.github.io/jPut/v2demo/demo2/
+[Data Binding Demo]:http://shabeer-ali-m.github.io/jPut/v2demo/data-binding/
+[Load More with jPut]:http://shabeer-ali-m.github.io/jPut/v2demo/loadmore_with_php/
+[Multi Dimensional Demo]:http://shabeer-ali-m.github.io/jPut/v2demo/loop_inside_loop
+[Todo App]:http://shabeer-ali-m.github.io/jPut/v2demo/todo
+
 
