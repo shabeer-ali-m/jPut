@@ -1,0 +1,41 @@
+{
+    "group": [
+        {
+            "name": "green",
+            "location": [
+                {
+                    "lname": "houston",
+                    "id": "h1",
+                    "person": [
+                        {
+                            "pname": "person1",
+                            "moid": "p1"
+                        },
+                        {
+                            "pname": "person2",
+                            "moid": "p2"
+                        },
+						{
+                            "pname": "person3",
+                            "moid": "p3"
+                        }
+                    ]
+                },
+				{
+                    "lname": "houston1",
+                    "id": "h2",
+                    "person": [
+                        {
+                            "pname": "person4",
+                            "moid": "p4"
+                        },
+                        {
+                            "pname": "person4",
+                            "moid": "p5"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
