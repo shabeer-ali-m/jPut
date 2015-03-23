@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Quick Example</title>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/jput-2.js"></script>
+   </head>
+   <body>
+     <ul jput="users" jput-jsondata='[{"name":"User 1"},{"name":"User 2"},{"name":"User 3"}]' jput-expression="exp2">
+     	<li>{[json.name]}</li>
+     </ul> 
+   </body>
+</html>
