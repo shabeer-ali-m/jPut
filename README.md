@@ -7,7 +7,7 @@ jPut is a small jQuey plugin where you can append your JSON to customized HTML f
   - It support JSONP format
 
 ### Version
-2.0.1
+2.0.2
 
 ### Dependencies
 [jQuery]
@@ -24,6 +24,8 @@ jPut is a small jQuey plugin where you can append your JSON to customized HTML f
 [Load More with jPut]
 
 [Todo App]
+
+[Expression]
 
 
 ### Installation
@@ -76,6 +78,9 @@ $(document).ready(function(){
 ###Template Properties
 
 In jPut template you can give any kind of expressions and also you can call your own custom JavaScript functions.
+jPut expressions are written inside double braces: ```{{ expression }}```.
+You can also use different expression if you have conflict with any other plugin or framework.```{[ expression ]}```
+For this you have to set you expression as "exp2".
 
 ex :
 
@@ -138,5 +143,6 @@ MIT
 [Load More with jPut]:http://shabeer-ali-m.github.io/jPut/v2demo/loadmore_with_php/
 [Multi Dimensional Demo]:http://shabeer-ali-m.github.io/jPut/v2demo/loop_inside_loop
 [Todo App]:http://shabeer-ali-m.github.io/jPut/v2demo/todo
+[Expression]:http://shabeer-ali-m.github.io/jPut/v2demo/expression
 
 
