@@ -1,5 +1,5 @@
 # jPut - JSON to HTML
-jPut is a small jQuey plugin where you can append your JSON to customized HTML format easily. You can also dynamically bind values to your existing data easily. Its simple and fast. The jPut can call by usind data attributes.
+jPut is a small jQuery plugin where you can append your JSON to customized HTML format easily. You can also dynamically bind values to your existing data easily. Its simple and fast. The jPut can call by usind data attributes.
 
 ### Features
   - You can load JSON via AJAX 
